@@ -1,9 +1,20 @@
+import { useState } from "react";
 import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header/Header";
 import CoreConcept from "./components/CoreConcept";
 import TabButton from "./components/TabButton";
 
-function App() {
+export default function App() {
+  let [selectedTopic, setSelectedTopic] = useState("Please click a button");
+
+  function handleSelect(selectedButton) {
+    // selectedButton = 'Component', 'JSX', 'Props', 'State'
+    setSelectedTopic(selectedButton);
+    console.log(selectedTopic);
+  }
+
+  console.log("APP COMPONENT EXECUTING");
+
   return (
     <>
       <Header />
@@ -24,15 +35,16 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton onSelect={() => handleSelect("Components")}>
+              Components
+            </TabButton>
+            <TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("Props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("State")}>State</TabButton>
           </menu>
+          {selectedTopic}
         </section>
       </main>
     </>
   );
 }
-
-export default App;
