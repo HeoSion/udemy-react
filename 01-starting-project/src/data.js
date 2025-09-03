@@ -34,7 +34,7 @@ export const EXAMPLES = {
   components: {
     title: "Components",
     description:
-      "Components are the building blocks of React applications. A component is a self-contained module (HTML + optional CSS + JS) that renders some output.",
+      "컴포넌트는 React 애플리케이션을 구성하는 기본 단위입니다. 컴포넌트는 화면에 무언가를 렌더링(표시)하는 독립적인 모듈(HTML + CSS + JS의 조합)입니다.",
     code: `
 function Welcome() {
   return <h1>Hello, World!</h1>;
@@ -43,7 +43,7 @@ function Welcome() {
   jsx: {
     title: "JSX",
     description:
-      "JSX is a syntax extension to JavaScript. It is similar to a template language, but it has full power of JavaScript (e.g., it may output dynamic content).",
+      "JSX는 JavaScript를 확장한 문법입니다. 템플릿 언어와 유사하지만, (동적인 콘텐츠를 출력하는 등) JavaScript의 모든 기능을 사용할 수 있다는 장점이 있습니다.",
     code: `
 <div>
   <h1>Welcome {userName}</h1>
@@ -53,7 +53,7 @@ function Welcome() {
   props: {
     title: "Props",
     description:
-      "Components accept arbitrary inputs called props. They are like function arguments.",
+      "컴포넌트는 props라고 불리는 임의의 입력을 받습니다. 이 props는 일반적인 함수에 있는 인자(argument)와 같습니다.",
     code: `
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
@@ -62,7 +62,7 @@ function Welcome(props) {
   state: {
     title: "State",
     description:
-      "State allows React components to change their output over time in response to user actions, network responses, and anything else.",
+      "state는 React 컴포넌트가 사용자 액션, 네트워크 응답 등 다양한 변화에 대응하여 시간에 따라 출력 결과를 바꿀 수 있게 해주는 데이터입니다.",
     code: `
 function Counter() {
   const [isVisible, setIsVisible] = useState(false);
