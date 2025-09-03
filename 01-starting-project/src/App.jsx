@@ -34,7 +34,7 @@ export default function App() {
       <Header />
       <main>
         <section id="core-concepts">
-          <h2>Core Concepts</h2>
+          <h2>React 4가지 요소</h2>
           <ul>
             {CORE_CONCEPTS.map((conceptItem) => (
               <CoreConcept key={conceptItem.title} {...conceptItem} />
@@ -42,7 +42,7 @@ export default function App() {
           </ul>
         </section>
         <section id="examples">
-          <h2>Examples</h2>
+          <h2>개념 및 예시</h2>
           <menu>
             <TabButton
               isSelected={selectedTopic === "components"}

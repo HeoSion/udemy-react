@@ -2,7 +2,7 @@ import reactImg from "../../assets/react-core-concepts.png";
 import getRandomInt from "../../util";
 import "./Header.css";
 
-const reactDescriptions = ["Fundamental", "Crucial", "Core"];
+const reactDescriptions = ["기초적인", "결정적인", "핵심적인"];
 
 export default function Header() {
   const description = reactDescriptions[getRandomInt(2)];
@@ -10,11 +10,8 @@ export default function Header() {
   return (
     <header>
       <img src={reactImg} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {description} React concepts you will need for almost any app you are
-        going to build!
-      </p>
+      <h1>React 핵심 요소</h1>
+      <p>{description} 모든 앱을 만들 때 필요한 React 개념</p>
     </header>
   );
 }
