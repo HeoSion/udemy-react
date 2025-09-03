@@ -6,26 +6,77 @@ import stateImg from "./assets/state-mgmt.png";
 export const CORE_CONCEPTS = [
   {
     image: componentsImg,
-    title: "컴포넌트",
+    title: "Components",
     description:
-      "UI를 구성하는 기본 단위 입니다. 여러 컴포넌트를 조합하여 전체 사용자 인터페이스를 만들 수 있습니다.",
+      "The core UI building block - compose the user interface by combining multiple components.",
   },
   {
     image: jsxImg,
     title: "JSX",
     description:
-      "실제로 렌더링될 마크업을 정의하기 위해, 동적인 값도 포함할 수 있는 HTML과 유사한 코드를 반환합니다.",
+      "Return (potentially dynamic) HTML(ish) code to define the actual markup that will be rendered.",
   },
   {
     image: propsImg,
     title: "Props",
     description:
-      "컴포넌트에 입력 데이터를 전달하여 설정이 가능하도록 만들고, 이를 통해 재사용성을 높여줍니다.",
+      "Make components configurable (and therefore reusable) by passing input data to them.",
   },
   {
     image: stateImg,
-    title: "상태(State)",
+    title: "State",
     description:
-      "React가 관리하는 데이터입니다. 이 데이터가 변경되면 컴포넌트가 리렌더링되고 UI가 업데이트됩니다.",
+      "React-managed data which, when changed, causes the component to re-render & the UI to update.",
   },
 ];
+
+export const EXAMPLES = {
+  components: {
+    title: "Components",
+    description:
+      "Components are the building blocks of React applications. A component is a self-contained module (HTML + optional CSS + JS) that renders some output.",
+    code: `
+function Welcome() {
+  return <h1>Hello, World!</h1>;
+}`,
+  },
+  jsx: {
+    title: "JSX",
+    description:
+      "JSX is a syntax extension to JavaScript. It is similar to a template language, but it has full power of JavaScript (e.g., it may output dynamic content).",
+    code: `
+<div>
+  <h1>Welcome {userName}</h1>
+  <p>Time to learn React!</p>
+</div>`,
+  },
+  props: {
+    title: "Props",
+    description:
+      "Components accept arbitrary inputs called props. They are like function arguments.",
+    code: `
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}`,
+  },
+  state: {
+    title: "State",
+    description:
+      "State allows React components to change their output over time in response to user actions, network responses, and anything else.",
+    code: `
+function Counter() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  function handleClick() {
+    setIsVisible(true);
+  }
+
+  return (
+    <div>
+      <button onClick={handleClick}>Show Details</button>
+      {isVisible && <p>Amazing details!</p>}
+    </div>
+  );
+}`,
+  },
+};
