@@ -30,6 +30,7 @@ export default function Examples() {
   return (
     <Section title="개념 및 예시" id="examples">
       <Tabs
+        ButtonsContainer="menu"
         buttons={
           <>
             <TabButton
