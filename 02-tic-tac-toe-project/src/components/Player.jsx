@@ -1,24 +1,35 @@
 import { useState } from "react";
 
-export default function Player({ name, symbol }) {
+export default function Player({ initialName, symbol }) {
+  const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
 
   function handleEdit() {
-    setIsEditing(!isEditing);
+    // 꼭 기억해야할 이전 상태를 업데이트를 하는 방법!
+    // setIsEditing(!isEditing) -> 상태를 업데이트 하지 못함❌
+    // setIsEditing(wasEditing => !wasEditing) => 함수로 사용해야 상태를 업데이트 할 수 있음✅
+    // setIsEditing(!isEditing); // true 상태를 스케줄에 업데이트
+    setIsEditing((editing) => !editing);
   }
 
-  let playerName = <span className="player-name">{name}</span>;
-  let buttonCaption = "Edit";
+  function handleChange(event) {
+    setPlayerName(event.target.value);
+  }
+
+  let editablePlayerName = <span className="player-name">{playerName}</span>;
+  // let buttonCaption = "Edit";
 
   if (isEditing === true) {
-    playerName = <input type="text" required value={name} />;
-    buttonCaption = "Save";
+    editablePlayerName = (
+      <input type="text" required value={playerName} onChange={handleChange} />
+    );
+    // buttonCaption = "Save";
   }
 
   return (
     <li>
       <span className="player">
-        {playerName}
+        {editablePlayerName}
         <span className="player-symbol">{symbol}</span>
       </span>
       <button type="button" onClick={handleEdit}>

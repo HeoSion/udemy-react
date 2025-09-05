@@ -4,5 +4,6 @@
 Udemy 강의를 참고하여 실습 및 예제를 기록하고 있습니다.
 
 
-## 📂 폴더 구조
+## 📂 폴더 구성
 - [01-starting-project](./01-starting-project)  
+- [02-tic-tac-toe-project](./02-tic-tac-toe-project/)
