@@ -11,6 +11,8 @@ export default function App() {
     duration: 10,
   });
 
+  const inputIsValid = userInput.duration >= 1;
+
   function handleChange(inputIdentifier, newValue) {
     setUserInput((prevUserInput) => {
       return {
@@ -24,7 +26,8 @@ export default function App() {
     <>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange} />
-      <Results input={userInput} />
+      {!inputIsValid && <p className="center">0보다 큰 양수를 입력해주세요!</p>}
+      {inputIsValid && <Results input={userInput} />}
     </>
   );
 }
